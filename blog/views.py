@@ -7,9 +7,12 @@ def root(request):
     return HttpResponseRedirect('/home')
 
 def home_page(request):
-    # context = {'current_time': datetime.now()}
+    # context = {}
 
-    context = { 'articles': Article.objects.all() }
+    context = { 
+    'articles': Article.objects.all(),
+    'current_time': datetime.now() 
+    }
     response = render(request, 'index.html', context)
     return HttpResponse(response)
 
