@@ -8,11 +8,21 @@
 </head>
 <body>
     <header>
-        <p>Getting down with Django</p> 
-        <p>Date: {{ current_time }}</p>
+        <h1>Getting down with Django</h2> 
+        <h2>Date: {{ current_time }}</h2>
     </header>
-    <main>
-        <dl>
+    {% for article in articles %}
+        {% if article.draft == False %}
+            <article>
+                <h3>{{ article.title }} - {{ article.author }}</h3> 
+                <p>{{ article.body }}</p>
+                <p> Originally published: {{ article.published_date }}</p>
+            </article>        
+
+        {% endif %}
+    {% endfor %}        
+
+        <!-- <dl>
             <dt>What is a client?</dt>
             <dd>The device that is used to present what is on the web (i.e., a computer, tablet, or phone.</dd>
         </dl>
@@ -33,8 +43,8 @@
             <dd>A web framework for Python that allows us to intercept requests and make responses. </dd>
         </dl>
         
+ -->
 
-
-    </main>
+    
 </body>
 </html>
