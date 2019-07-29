@@ -10,7 +10,7 @@ def home_page(request):
     # context = {}
 
     context = { 
-    'articles': Article.objects.all(),
+    'articles': Article.objects.all().order_by('-published_date'),
     'current_time': datetime.now() 
     }
     response = render(request, 'index.html', context)
