@@ -19,5 +19,5 @@ def home_page(request):
 def blog_show(request, id):
     article = Article.objects.get(pk=id)
     context = {'article': article }
-    response = render(request, 'article.html', context)
+    response = render(request, 'show.html', context)
     return HttpResponse(response)
