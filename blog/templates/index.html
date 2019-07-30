@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<body>
+
     {% for article in articles %}
-    {{ article.draft }}
-        {% if article.draft == False %}
+    <a href="{% url 'full_blog' id=article.pk %}"> 
+            <body>
+        {% if article.draft == False %} 
             <article>
                 <h3>{{ article.title }} - {{ article.author }}</h3> 
-                <p>{{ article.body }}</p>
                 <p> Originally published: {{ article.published_date }}</p>
-            </article>    
-        {% endif %}      
+            </article>   
+        {% endif %} 
+    </a>     
     {% endfor %}          
 </body>
+
 {% endblock %}
 
