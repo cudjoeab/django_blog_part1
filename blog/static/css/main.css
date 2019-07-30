@@ -1,0 +1,43 @@
+/* RGB */
+/* $color1: rgba(251, 175, 66, 1);
+$color2: rgba(245, 224, 183, 1);
+$color3: rgba(139, 191, 159, 1);
+$color4: rgba(237, 136, 135, 1);
+$color5: rgba(89, 52, 79, 1); */
+
+* {
+    font-family: 'Fira Code', monospace;
+}
+header {
+    color: rgba(89, 52, 79, 1);
+    
+    
+}
+body {
+    background: rgba(139, 191, 159, .5);
+}
+main{
+    display: block;
+    text-align: justify;     
+    max-width: 100%;
+    padding: 20px; 
+}
+
+article {
+    max-width: 100%;
+    margin: 0 auto; 
+    background: rgba(245, 224, 183, 0.75); 
+    padding: 20px; 
+    border-radius: 20px; 
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+footer{
+    color: white;
+    font-weight: 600;
+    text-align: right;
+    padding: 10px;
+}
+
+
+

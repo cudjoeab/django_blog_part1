@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <h1>Getting down with Django</h2> 
-        <h2>Date: {{ current_time }}</h2>
-    </header>
+{% extends 'base.html' %}
 
+{% block content %}
+<body>
     {% for article in articles %}
     {{ article.draft }}
         {% if article.draft == False %}
@@ -21,31 +11,7 @@
                 <p> Originally published: {{ article.published_date }}</p>
             </article>    
         {% endif %}      
-    {% endfor %}        
-
-        <!-- <dl>
-            <dt>What is a client?</dt>
-            <dd>The device that is used to present what is on the web (i.e., a computer, tablet, or phone.</dd>
-        </dl>
-        <dl>
-            <dt>What is a server?</dt>
-            <dd>The device that stores the information that the client will be accessing.</dd>
-        </dl>
-        <dl>
-            <dt>What is an HTTP request?</dt>
-            <dd>An action from the client to retrieve information from the server. This can be a click on a link, or navigating to a url.</dd>
-        </dl>
-        <dl>
-            <dt>What is an HTTP response?</dt>
-            <dd>A response sent back from the server, this includes the status of the request and any information about the content (a header) and the content itself (the body).</dd>
-        </dl>
-        <dl>
-            <dt>What is Django and why do we use it?</dt>
-            <dd>A web framework for Python that allows us to intercept requests and make responses. </dd>
-        </dl>
-        
- -->
-
-    
+    {% endfor %}          
 </body>
-</html>
+{% endblock %}
+
